@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const { db } = require('./db')
+
 const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 //will change to sqlize methods after creating db for our data
 
@@ -45,6 +49,8 @@ app.delete("/todo:id", (req, res) => {
     res.send(todo);
 });
 
-app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
+app.listen(PORT, () => {
+    db.sync()
+    console.log(`Server running on port: http://localhost:${PORT}`)});
 
 module.export = app;
