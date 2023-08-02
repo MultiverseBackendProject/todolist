@@ -1,7 +1,8 @@
-const { db, DataTypes } = require('../db')
+const { db } = require('../db');
+const { DataTypes } = require('sequelize');
 
 const Todo = db.define("todos", {
-    todo: DataTypes.STRING,
+    task: DataTypes.STRING,
     done: DataTypes.BOOLEAN
 });
 
