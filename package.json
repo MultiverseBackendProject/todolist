@@ -1,20 +1,27 @@
 {
-  "name": "snippets",
+  "name": "todolist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TBDxx/snippets.git"
+    "url": "git+https://github.com/MultiverseBackendProject/todolist.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TBDxx/snippets/issues"
+    "url": "https://github.com/MultiverseBackendProject/todolist/issues"
   },
-  "homepage": "https://github.com/TBDxx/snippets#readme"
+  "homepage": "https://github.com/MultiverseBackendProject/todolist#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
