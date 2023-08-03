@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 });
 
 //sends back all items - GET/READ
-router.get("/todo", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const todolist = await Todo.findAll()
         res.status(200).json(todolist)
@@ -20,7 +20,7 @@ router.get("/todo", async (req, res) => {
 });
 
 //send back task with specific id - GET/READ by id
-router.get("/todo/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
         const task = await Todo.findByPk(req.params.id)
         res.status(200).json(task)
@@ -31,7 +31,7 @@ router.get("/todo/:id", async (req, res) => {
 });
 
 //add a todo to the list - POST/CREATE
-router.post("/todo", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         const newTask = await Todo.create({
             task: req.body.task,
@@ -45,7 +45,7 @@ router.post("/todo", async (req, res) => {
 });
 
 //edit a todo - PUT/UPDATE
-router.put("/todo/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
     try {
         const errors = validationResult(req)
         if (!errors.isEmpty()){
@@ -65,7 +65,7 @@ router.put("/todo/:id", async (req, res) => {
 });
 
 //delete a todo - DELETE
-router.delete("/todo/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
         await Todo.destroy({
             where: {

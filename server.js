@@ -35,11 +35,6 @@ const {
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
-// req.isAuthenticated is provided from the auth router
-app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
-
 app.use(cors());
 app.use('/', routes); //middleware routes
 app.use('/todo', toDoRoutes); //todo routes
