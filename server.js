@@ -1,9 +1,12 @@
+require('dotenv').config('.env');
 const express = require('express');
 const app = express();
 const path = require('path');
 const { db } = require('./db')
 const { Todo } = require('./models/Todo');
 const { validationResult } = require('express-validator');
+
+// const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,6 +19,32 @@ let todolist = [
     { id: 2, task: 'work out', done: 'yes' },
     { id: 3, task: 'cry', done: 'yes' }
 ];
+
+const {
+    AUTH0_SECRET,
+    AUTH0_BASE_URL = 'http://localhost:3000',
+    AUTH0_CLIENT_ID,
+    AUTH0_ISSUER_BASE_URL,
+  } = process.env;
+  
+  const config = {
+    authRequired: true,
+    auth0Logout: true,
+    secret: AUTH0_SECRET,
+    baseURL: AUTH0_BASE_URL,
+    clientID: AUTH0_CLIENT_ID,
+    issuerBaseURL: AUTH0_ISSUER_BASE_URL,
+  };
+
+const { auth } = require('express-openid-connect');
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
 
 //sends back all items - GET/READ
 app.get("/todo", async (req, res) => {
