@@ -1,5 +1,5 @@
 const home = (req, res, next) => {
-    if(req.oidc.isAuthenticated()) {
+    if (req.oidc.isAuthenticated()) {
         console.log('USER', req.oidc)
         res.send(`Welcome home ${req.oidc.user.name}`)
     } else {
