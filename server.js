@@ -1,13 +1,16 @@
-require('dotenv').config('.env');
+require('dotenv').config();
+const cors = require('cors')
 const express = require('express');
-const app = express();
+const { auth } = require('express-openid-connect');
+const routes = require('./routes')
+
 const path = require('path');
 const { db } = require('./db')
 const { Todo } = require('./models/Todo');
 const { validationResult } = require('express-validator');
 
-// const cors = require('cors');
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -36,7 +39,7 @@ const {
     issuerBaseURL: AUTH0_ISSUER_BASE_URL,
   };
 
-const { auth } = require('express-openid-connect');
+
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
@@ -117,8 +120,12 @@ app.delete("/todo/:id", async (req, res) => {
     }
 });
 
+app.use(cors());
+
+app.use('/', routes);
+
 app.listen(PORT, () => {
     db.sync()
     console.log(`Server running on port: http://localhost:${PORT}`)});
 
-module.export = app;
+module.exports = app;
