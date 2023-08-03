@@ -1,34 +1,28 @@
-require('dotenv').config();
-const cors = require('cors')
+const cors = require('cors');
 const express = require('express');
+const routes = require('./routes');
+const morgan = require('morgan');
 const { auth } = require('express-openid-connect');
-const routes = require('./routes')
-
-const path = require('path');
-const { db } = require('./db')
+const { db } = require('./db');
 const { Todo } = require('./models/Todo');
 const { validationResult } = require('express-validator');
+require('dotenv').config();
 
-
+//express app
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+//middleware
 app.use(express.json());
+app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
-
-//sample data (just for now)
-let todolist = [
-    { id: 1, task: 'eat breaky', done: 'yes' },
-    { id: 2, task: 'work out', done: 'yes' },
-    { id: 3, task: 'cry', done: 'yes' }
-];
 
 const {
     AUTH0_SECRET,
     AUTH0_BASE_URL = 'http://localhost:3000',
     AUTH0_CLIENT_ID,
     AUTH0_ISSUER_BASE_URL,
-  } = process.env;
+} = process.env;
   
   const config = {
     authRequired: true,
@@ -37,9 +31,7 @@ const {
     baseURL: AUTH0_BASE_URL,
     clientID: AUTH0_CLIENT_ID,
     issuerBaseURL: AUTH0_ISSUER_BASE_URL,
-  };
-
-
+};
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
@@ -121,7 +113,6 @@ app.delete("/todo/:id", async (req, res) => {
 });
 
 app.use(cors());
-
 app.use('/', routes);
 
 app.listen(PORT, () => {
