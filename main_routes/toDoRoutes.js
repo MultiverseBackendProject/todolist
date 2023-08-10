@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Todo } = require('../models/Todo');
 const { validationResult } = require('express-validator');
+const { requiresAuth } = require('express-openid-connect')
 
 router.use((req, res, next) => {
     console.log('Welcome to your To-Do List!')
@@ -9,7 +10,7 @@ router.use((req, res, next) => {
 });
 
 //sends back all items - GET/READ
-router.get("/", async (req, res) => {
+router.get("/", requiresAuth(), async (req, res) => {
     try {
         const todolist = await Todo.findAll()
         res.status(200).json(todolist)
@@ -20,7 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 //send back task with specific id - GET/READ by id
-router.get("/:id", async (req, res) => {
+router.get("/:id", requiresAuth(), async (req, res) => {
     try {
         const task = await Todo.findByPk(req.params.id)
         res.status(200).json(task)
@@ -31,7 +32,7 @@ router.get("/:id", async (req, res) => {
 });
 
 //add a todo to the list - POST/CREATE
-router.post("/", async (req, res) => {
+router.post("/", requiresAuth(), async (req, res) => {
     try {
         const newTask = await Todo.create({
             task: req.body.task,
@@ -45,7 +46,7 @@ router.post("/", async (req, res) => {
 });
 
 //edit a todo - PUT/UPDATE
-router.put("/:id", async (req, res) => {
+router.put("/:id", requiresAuth(), async (req, res) => {
     try {
         const errors = validationResult(req)
         if (!errors.isEmpty()){
@@ -65,7 +66,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //delete a todo - DELETE
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", requiresAuth(), async (req, res) => {
     try {
         await Todo.destroy({
             where: {

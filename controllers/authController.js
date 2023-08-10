@@ -1,4 +1,4 @@
-const home = (req, res, next) => {
+const login = (req, res, next) => {
     if (req.oidc.isAuthenticated()) {
         console.log('USER', req.oidc)
         res.send(`Welcome home ${req.oidc.user.name}`)
@@ -7,16 +7,16 @@ const home = (req, res, next) => {
     }
 }
 
-const login = (req, res, next) => {
-    req.oidc.login()
-}
+// const login = (req, res, next) => {
+//     req.oidc.login()
+// }
 
 const logout = (req, res, next) => {
     req.oidc.logout()
 }
 
 module.exports = {
-    home,
+    // home,
     login,
     logout
 }

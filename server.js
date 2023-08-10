@@ -36,7 +36,6 @@ const {
 app.use(auth(config));
 
 app.use(cors());
-app.use('/', routes); //middleware routes
 app.use('/todo', toDoRoutes); //todo routes
 
 app.listen(PORT, () => {
