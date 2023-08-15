@@ -9,3 +9,7 @@
 // module.exports = {
 //     requireAuth
 // }
+
+/**
+ * Basically, there is no need to write your own auth middleware unless you want to have your own login/logout via email and password
+ */
