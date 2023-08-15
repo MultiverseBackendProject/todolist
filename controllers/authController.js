@@ -7,7 +7,7 @@ const login = (req, res) =>
   });
 
 const logout = (req, res) => {
-  req.oidc.logout();
+  res.oidc.logout();
 };
 
 module.exports = {
