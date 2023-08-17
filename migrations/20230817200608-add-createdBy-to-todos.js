@@ -14,4 +14,4 @@ module.exports = {
   },
 };
 
-//this file exists because of updating our schema/db - had to add this type for work in assocation data/tier 5 reqs
+//this file exists because of updating our db schema/model - had to add this type for work in assocation data/tier 5 reqs
