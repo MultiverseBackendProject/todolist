@@ -51,7 +51,7 @@ app.use('/auth', authRoutes); // login and logout
 app.use('/todos', toDoRoutes); //todo routes
 
 app.listen(PORT, () => {
-  db.sync();
+  db.sync(); // {force:true} - this will reset our db if added - current state: all tasks will be saved even after reset of server
   console.log(`Server running on port: http://localhost:${PORT}`);
 });
 
