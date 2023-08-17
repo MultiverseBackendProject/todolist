@@ -26,9 +26,12 @@ exports.getAllTodos = async (req, res) => {
 
 exports.getToDoById = async (req, res) => {
   try {
-    //Check this - if task is not found, it returns a `null` value, which is not an error - make sure you handle this correctly!
     const task = await Todo.findByPk(req.params.id);
-    res.status(200).json(task);
+    if (task === null) {
+      res.status(404).send("No task with this id exists.")
+    } else {
+      res.status(200).json(task);
+    }
   } catch (error) {
     console.error(error);
     res.status(404).send('Cannot find task');
