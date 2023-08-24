@@ -41,9 +41,9 @@ app.use(cors());
 //Home page - different response depending on if user is logged in or not
 app.get('/', (req, res) => {
   if (req.oidc.user) {
-    res.json({ response: `Hello, ${req.oidc.user.given_name}` }); //if logged in
+    res.json(`Hello, ${req.oidc.user.given_name}`); //if logged in
   } else {
-    res.json({ response: 'Hello there!' }); //no login present
+    res.json('Hello there! Please log in to access your todo list!'); //no login present
   }
 });
 
@@ -51,7 +51,7 @@ app.use('/auth', authRoutes); // login and logout
 app.use('/todos', toDoRoutes); //todo routes
 
 app.listen(PORT, () => {
-  db.sync();
+  db.sync(); // {force:true} - this will reset our db if added - current state: all tasks will be saved even after reset of server
   console.log(`Server running on port: http://localhost:${PORT}`);
 });
 
