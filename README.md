@@ -65,13 +65,14 @@ Wireframe/ Future Stretch Goals
 - The application uses Node.js with Express.js as the web framework.
 - Middleware like cors, morgan, and express.json are used to handle cross-origin requests, logging, and JSON parsing.
 - The express-openid-connect middleware is integrated for Auth0 authentication.
+  
 Routes:
-Various routes:
-/ - The home route that displays a greeting message or user-specific message if logged in.
-/auth - Contains authentication-related routes:
-/login - Initiates the login process using Auth0.
-/logout - Initiates the logout process using Auth0.
-/todos - Contains routes related to managing to-do items.
+- / - The home route that displays a greeting message or user-specific message if logged in.
+- /auth - Contains authentication-related routes:
+- /login - Initiates the login process using Auth0.
+- /logout - Initiates the logout process using Auth0.
+- /todos - Contains routes related to managing to-do items.
+  
 Auth0 Integration:
 - Auth0 is used for user authentication and identity management.
 - We configured Auth0 settings such as client ID, client secret, and domain in our environment variables.
