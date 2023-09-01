@@ -7,7 +7,7 @@ Date: 5 weeks
 
 ## Introduction
 
-We created a simple to-do list that requires user authenication in order for the user to be able to add items in their list and be able to delete, update, or create tasks while authorized. If the user is not authorized, then they will need to login in order to see their list. 
+We created a simple to-do list that requires user authentication for the user to be able to add items in their list and be able to delete, update, or create tasks while authorized. If the user is not authorized, then they will need to login in to see their list. 
 
 ## Requirements
 
