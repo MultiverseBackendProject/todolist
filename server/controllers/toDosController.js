@@ -9,7 +9,7 @@ exports.createToDo = async (req, res) => {
     });
     res.status(200).json(newTask);
   } catch (error) {
-    console.error(error);
+    console.error("Error creating task:", error);
     res.status(500).send('Cannot create task');
   }
 };
