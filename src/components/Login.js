@@ -1,12 +1,11 @@
 import React from 'react';
-import { Auth0Provider, useAuth0 } from 'react-auth0-spa';
-
+import authController from '../../server/controllers/authController'
 
 const Login = () => {
-    const { loginWithAuth0 } = useAuth0();
+    const { login } = authController();
 
     const handleLogin = () => {
-        loginWithAuth0();
+        login();
     };
 
     return (
