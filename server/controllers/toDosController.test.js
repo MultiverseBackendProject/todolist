@@ -1,6 +1,6 @@
 const request = require('supertest');
 // express app
-const app = require('../server');
+const app = require('../../server');
 
 // db setup
 const { db } = require('../db');
