@@ -9,7 +9,7 @@ require('dotenv').config();
 
 //express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json());
@@ -38,7 +38,7 @@ app.use(auth(config));
 
 // Configure CORS for React frontend
 app.use(cors({
-  origin: 'http://localhost:3006',
+  origin: 'http://localhost:4000',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
