@@ -45,7 +45,7 @@ app.use(cors({
 //Home page - different response depending on if user is logged in or not
 app.get('/', (req, res) => {
   if (req.oidc.user) {
-    res.json({ response: `He llo, ${req.oidc.user.given_name}` }); //if logged in
+    res.json({ response: `Hello, ${req.oidc.user.given_name}` }); //if logged in
   } else {
     res.json({ response: 'Hello there!' }); //no login present
   }
