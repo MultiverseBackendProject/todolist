@@ -22,9 +22,6 @@ const Navigation = () => {
           <Nav.Link as={NavLink} to="/todo" className="nav-link">
             To-Do List
           </Nav.Link>
-          <Nav.Link as={NavLink} to="/login" className="nav-link">
-            Login Page
-          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
