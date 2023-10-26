@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import Navigation from './Navigation';
 import Profile from './Profile';
 import ToDoList from './ToDoList';
-import Login from './Login'
 import AuthLogin from './authLogin';
 
 function App() {

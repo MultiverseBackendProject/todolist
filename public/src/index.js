@@ -12,7 +12,7 @@ root.render(
           domain="https://dev-kjcleoengqv06t8c.us.auth0.com"
           clientId="4HaNA3owBvlFnpyNrBzUugSZD6NAgsLk"
           authorizationParams={{
-            redirect_uri: window.location.origin
+            redirect_uri: "http://localhost:1234/callback"
           }}
         >
         <App />
