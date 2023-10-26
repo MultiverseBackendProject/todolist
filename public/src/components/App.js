@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navigation from './Navigation';
 import Profile from './Profile';
 import ToDoList from './ToDoList';
-import AuthLogin from './authLogin';
+import Login from './Login'
 
 function App() {
   return (
@@ -13,15 +13,14 @@ function App() {
     <Routes>
         <Route path="/profile" element={<Profile />} />
         <Route path="/todo" element={<ToDoList />} />
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<AuthLogin />} />
+        <Route exact path="/" element={<Login />} />
     </Routes>
   </div>
   );
 }
 
-function Home() {
-  return <h1>Home Page</h1>;
+function FirstPage() {
+  return;
 }
 
 export default App;

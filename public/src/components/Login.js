@@ -1,19 +1,14 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React from 'react';
-import { login } from '../../../server/controllers/authController';
+import Container from 'react-bootstrap/Container';
 
 const Login = () => {
-    const handleLogin = (e) => {
-        e.preventDefault();
-        login();
-    };
-
+    const { loginWithRedirect } = useAuth0();
+    console.log(useAuth0());
     return (
-        <>
-            <h1>Login Page</h1>
-            <button onClick={handleLogin}>
-                Login With Auth0
-            </button>
-        </>
+        <Container>
+            <button onClick={() => loginWithRedirect()}>Log in</button>
+        </Container>
     );
 };
 
