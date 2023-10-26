@@ -19,7 +19,6 @@ function Home() {
 
   return (
     <div className={dark ? 'dark-theme home container' : 'light-theme home container'}>
-      <h1>Homepage</h1>
 
       {isAuthenticated ? (
         // Render content when the user is authenticated
