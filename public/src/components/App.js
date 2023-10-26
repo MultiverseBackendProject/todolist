@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Profile from './Profile';
 import ToDoList from './ToDoList';
 import Login from './Login'
+import AuthLogin from './authLogin';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/todo" element={<ToDoList />} />
         <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<AuthLogin />} />
     </Routes>
   </div>
   );
