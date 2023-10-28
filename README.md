@@ -1,5 +1,21 @@
-# Multiverse Backend Project using Express, Node, SQLite, and Sequelize. 
-Title: ToDoList - Backend Module
+<!--
+
+Multiverse Fullstack Project using:
+
+Back-End:
+    - Express
+    - Node
+    - SQLite3
+    - Sequelize
+
+Front-End:
+    - React.js
+    - HTML
+    - CSS
+    
+Title: To-Do List - Fullstack Project
+
+ -->
 
 Author(s): Tani Cha & Kim Le
 
