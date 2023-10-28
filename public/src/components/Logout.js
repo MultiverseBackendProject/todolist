@@ -8,7 +8,7 @@ const Logout = () => {
 
     return ( 
         <Container>
-            <button onClick={() => logout()}>Logout Here</button>
+            <button onClick={logout}>Log Out Here</button>
         </Container>
     )
 };

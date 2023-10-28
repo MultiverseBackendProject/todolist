@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Logout from './Logout';
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <h1>Welcome to your To-Do List!</h1>
       <Logout /> 
-      {/* change output url on autho - to localhost:1234/ */}
+      {/* change Logout output url on autho - to localhost:1234/ */}
     </>
   )
 };
