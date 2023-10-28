@@ -7,7 +7,7 @@ const Login = () => {
     console.log(useAuth0());
     return (
         <Container>
-            <button variant="primary" onClick={() => loginWithRedirect()}>Log in</button>
+            <button onClick={() => loginWithRedirect()}>Log in</button>
         </Container>
     );
 };
