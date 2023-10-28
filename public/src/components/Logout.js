@@ -3,12 +3,11 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 
 const Logout = () => {
-
     const { logout } = useAuth0();
 
     return ( 
         <Container>
-            <button onClick={logout}>Log Out Here</button>
+            <button className="btn btn-danger btn-block" onClick={logout}>Log Out Here</button>
         </Container>
     )
 };

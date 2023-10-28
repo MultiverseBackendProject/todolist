@@ -12,14 +12,15 @@ function App() {
   return (
      // routes is how react-router renders the element and changes the url without reloading the page
   <div>
-    <Navigation />
     <Routes>
         <Route exact path="/" element={<AnonHome />} /> 
-        <Route path="/todo" element={<ToDoList />} />
-        <Route path="/profile" element={<Profile />} />
-        {/* would need parent route to login button maybe} */}
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/callback" element={<Home />} />
+
+        <Route path="/callback" element={<Home />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="todo" element={<ToDoList />} />
+        </Route>
+
     </Routes>
   </div>
   );
