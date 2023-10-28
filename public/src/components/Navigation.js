@@ -13,7 +13,7 @@ const Navigation = () => {
             <span className="brand-name font-weight-bold text-primary">To-Do List</span>
         </Navbar.Brand>
         <Nav className="ms-auto">
-          <Nav.Link as={NavLink} to="/callback/"className="text-decoration-underline">
+          <Nav.Link as={NavLink} to="/callback/home"className="text-decoration-underline">
             Homepage
           </Nav.Link>
           <Nav.Link as={NavLink} to="/callback/profile" className="nav-link">
