@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// Footer.js
 import React from 'react';
 
 const Footer = () => {
@@ -10,7 +8,7 @@ const Footer = () => {
           <div className="col-lg-4">
             <h3>Contact Us</h3>
             <address>
-              <p>Email: info@todolistapp.com</p>
+              <p>Email: info@todolist.com</p>
               <p>Phone: +123-456-7890</p>
             </address>
           </div>
@@ -18,13 +16,13 @@ const Footer = () => {
             <h3>Connect with Us</h3>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Facebook</a>
+                <a href="www.facebook.com">Facebook</a>
               </li>
               <li>
-                <a href="#">Twitter</a>
+                <a href="www.twitter.com">Twitter</a>
               </li>
               <li>
-                <a href="#">Instagram</a>
+                <a href="instagram.com">Instagram</a>
               </li>
             </ul>
           </div>
