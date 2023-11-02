@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 const Profile = () => {
   return (
-    <Container style={{ paddingTop: '2%' }}>
+    <Container style={{ paddingTop: '3%' }}>
       <Row>
         <Col md={6} className="mx-auto">
           <h1>Profile</h1>
