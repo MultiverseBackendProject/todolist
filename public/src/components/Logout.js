@@ -1,15 +1,15 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import React from 'react';
-import Container from 'react-bootstrap/Container';
+// import { useAuth0 } from "@auth0/auth0-react";
+// import React from 'react';
+// import Container from 'react-bootstrap/Container';
 
-const Logout = () => {
-    const { logout } = useAuth0();
+// const Logout = () => {
+//     const { logout } = useAuth0();
 
-    return ( 
-        <Container>
-            <button className="btn btn-danger btn-block" onClick={logout}>Log Out Here</button>
-        </Container>
-    )
-};
+//     return ( 
+//         <Container style={{ paddingTop: '2%' }}>
+//             <button className="btn btn-danger btn-block" onClick={logout}>Log Out Here</button>
+//         </Container>
+//     )
+// };
 
-export default Logout;
+// export default Logout;
