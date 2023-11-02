@@ -16,68 +16,70 @@ const Navigation = () => {
   };
 
   return (
-    <Navbar sticky="top" bg="dark" variant="dark" className="mb-4 custom-navbar">
-      <Container>
-        <Navbar.Brand className="mr-auto">
-          <span className="brand-name font-weight-bold text-primary">To-Do List</span>
-        </Navbar.Brand>
-        <Nav className="ms-auto">
-          <Nav.Link as={NavLink} to="/callback/home" className="nav-link">
-            Homepage
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/callback/profile" className="nav-link">
-            Profile
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/callback/todo" className="nav-link">
-            To-Do List
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/callback/aboutus" className="nav-link">
-            About Us
-          </Nav.Link>
-          {isAuthenticated ? (
-            <Nav.Link className="nav-link">
-              <button
-                onClick={handleLogout}
-                style={{
-                  color: 'black',
-                  border: 'none',
-                  background: 'none',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  textTransform: 'capitalize',
-                  fontSize: '16px',
-                  fontWeight: '500',
-                  fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
-                  margin: '0 10px',
-                }}
-              >
-                Log Out
-              </button>
+    <div className="d-flex justify-content-center"> {/* Center the navigation bar */}
+      <Navbar sticky="top" bg="dark" variant="dark" className="mb-4 custom-navbar">
+        <Container>
+          <Navbar.Brand className="mr-auto">
+            <span className="brand-name font-weight-bold text-primary">To-Do List</span>
+          </Navbar.Brand>
+          <Nav className="ms-auto">
+            <Nav.Link as={NavLink} to="/callback/home" className="nav-link">
+              Homepage
             </Nav.Link>
-          ) : (
-            <Nav.Link className="nav-link">
-              <button
-                onClick={loginWithRedirect}
-                style={{
-                  color: 'black',
-                  border: 'none',
-                  background: 'none',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  textTransform: 'capitalize',
-                  fontSize: '16px',
-                  fontWeight: '500',
-                  fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
-                  margin: '0 10px',
-                }}
-              >
-                Log In
-              </button>
+            <Nav.Link as={NavLink} to="/callback/profile" className="nav-link">
+              Profile
             </Nav.Link>
-          )}
-        </Nav>
-      </Container>
-    </Navbar>
+            <Nav.Link as={NavLink} to="/callback/todo" className="nav-link">
+              To-Do List
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/callback/aboutus" className="nav-link">
+              About Us
+            </Nav.Link>
+            {isAuthenticated ? (
+              <Nav.Link className="nav-link">
+                <button
+                  onClick={handleLogout}
+                  style={{
+                    color: 'black',
+                    border: 'none',
+                    background: 'none',
+                    fontWeight: 'bold',
+                    textDecoration: 'none',
+                    textTransform: 'capitalize',
+                    fontSize: '20px',
+                    fontWeight: '500',
+                    fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
+                    margin: '0 10px',
+                  }}
+                >
+                  Log Out
+                </button>
+              </Nav.Link>
+            ) : (
+              <Nav.Link className="nav-link">
+                <button
+                  onClick={loginWithRedirect}
+                  style={{
+                    color: 'black',
+                    border: 'none',
+                    background: 'none',
+                    fontWeight: 'bold',
+                    textDecoration: 'none',
+                    textTransform: 'capitalize',
+                    fontSize: '20px',
+                    fontWeight: '500',
+                    fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
+                    margin: '0 10px',
+                  }}
+                >
+                  Log In
+                </button>
+              </Nav.Link>
+            )}
+          </Nav>
+        </Container>
+      </Navbar>
+    </div>
   );
 };
 

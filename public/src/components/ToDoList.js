@@ -20,7 +20,7 @@ function ToDoList() {
   };
 
   return (
-    <Container style={{ paddingTop: '3%' }}>
+    <Container className='mobile' style={{ paddingTop: '3%', paddingLeft: '20%' }}>
       <h1>To-Do List</h1>
       <Form>
         <Row>

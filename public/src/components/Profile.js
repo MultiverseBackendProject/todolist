@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 const Profile = () => {
   return (
-    <Container style={{ paddingTop: '3%' }}>
+    <Container className='mobile' style={{ paddingTop: '2%', paddingLeft: '20%' }}>
       <Row>
         <Col md={6} className="mx-auto">
           <h1>Profile</h1>
@@ -16,7 +16,7 @@ const Profile = () => {
               <Form.Control type="text" placeholder="Enter your first name" />
             </Form.Group>
 
-            <br /> {/* Add a line break for spacing */}
+            <br />
             
             <Form.Group controlId="lastName">
               <Form.Label>Last Name</Form.Label><br />
