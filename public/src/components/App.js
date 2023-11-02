@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/" element={<AnonHome />} />
         <Route path="/callback" element={<Callback />}>
           <Route path="profile" element={<Profile />} />
-          <Route path="about" element={<AboutUs />} /> 
+          <Route path="aboutus" element={<AboutUs />} /> 
           <Route path="logout" element={<Logout />} />
           <Route path="todo" element={<ToDoList />} />
           <Route path="home" element={<Home />} />
