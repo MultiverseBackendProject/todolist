@@ -10,17 +10,20 @@ const Navigation = () => {
     <Navbar sticky="top" bg="dark" variant="dark" className="mb-4 custom-navbar">
       <Container>
         <Navbar.Brand className="mr-auto">
-            <span className="brand-name font-weight-bold text-primary">To Do List</span>
+            <span className="brand-name font-weight-bold text-primary">To-Do List</span>
         </Navbar.Brand>
         <Nav className="ms-auto">
-          <Nav.Link as={NavLink} to="/" className="nav-link">
+          <Nav.Link as={NavLink} to="/callback/home" className="nav-link">
             Homepage
           </Nav.Link>
-          <Nav.Link as={NavLink} to="/profile" className="nav-link">
+          <Nav.Link as={NavLink} to="/callback/profile" className="nav-link">
             Profile Page
           </Nav.Link>
-          <Nav.Link as={NavLink} to="/todo" className="nav-link">
+          <Nav.Link as={NavLink} to="/callback/todo" className="nav-link">
             To-Do List
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="/callback/logout" className="nav-link">
+            Log Out
           </Nav.Link>
         </Nav>
       </Container>

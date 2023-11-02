@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
   if (req.oidc.user) {
     res.json({ response: `Hello, ${req.oidc.user.given_name}` }); //if logged in
   } else {
-    res.json({ response: 'Hello there!' }); //no login present
+    res.json({ response: 'Hello there! You are not logged in at the moment.' }); //no login present
   }
 });
 

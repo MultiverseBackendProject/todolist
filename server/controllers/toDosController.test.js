@@ -4,7 +4,6 @@ const app = require('../../server');
 
 // db setup
 const { db } = require('../db');
-const { toDosController } = require("./toDosController")
 const { Todo } = require('../models/Todo')
 
 describe('endpoints', () => {
