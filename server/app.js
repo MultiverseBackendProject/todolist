@@ -36,11 +36,7 @@ const config = {
 app.use(auth(config));
 
 // Configure CORS for React frontend
-app.use(cors({
-  origin: 'http://localhost:3000',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-}));
+app.use(cors({ origin: `http://localhost:1234` }));
 
 //Home page - different response depending on if user is logged in or not
 app.get('/', (req, res) => {

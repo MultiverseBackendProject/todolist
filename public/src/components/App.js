@@ -8,12 +8,10 @@ import AnonHome from './AnonHome';
 import Callback from './Callback';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
-import Navigation from './Navigation';
 
 function App() {
   return (
     <div>
-      <Navigation /> 
       <Routes>
         <Route exact path="/" element={<AnonHome />} />
         <Route path="/callback" element={<Callback />}>

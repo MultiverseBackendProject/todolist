@@ -10,9 +10,7 @@ const Navigation = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   const handleLogout = () => {
-    if (isAuthenticated) {
       logout({ returnTo: window.location.origin });
-    }
   };
 
   return (
@@ -35,7 +33,6 @@ const Navigation = () => {
             <Nav.Link as={NavLink} to="/callback/aboutus" className="nav-link">
               About Us
             </Nav.Link>
-            {isAuthenticated ? (
               <Nav.Link className="nav-link">
                 <button
                   onClick={handleLogout}
@@ -55,27 +52,6 @@ const Navigation = () => {
                   Log Out
                 </button>
               </Nav.Link>
-            ) : (
-              <Nav.Link className="nav-link">
-                <button
-                  onClick={loginWithRedirect}
-                  style={{
-                    color: 'black',
-                    border: 'none',
-                    background: 'none',
-                    fontWeight: 'bold',
-                    textDecoration: 'none',
-                    textTransform: 'capitalize',
-                    fontSize: '20px',
-                    fontWeight: '500',
-                    fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
-                    margin: '0 10px',
-                  }}
-                >
-                  Log In
-                </button>
-              </Nav.Link>
-            )}
           </Nav>
         </Container>
       </Navbar>
