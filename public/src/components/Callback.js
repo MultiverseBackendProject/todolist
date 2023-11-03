@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import Navigation from './Navigation';
+import Footer from './Footer';
 
 const Callback = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
@@ -13,8 +14,9 @@ const Callback = () => {
     return (
         <>  
             {/* nav bar will only show up if in the callback routes (when authenticated) */}
-            <Navigation /> 
+            <Navigation />
             <Outlet />
+            <Footer />
         </>
     )
 }

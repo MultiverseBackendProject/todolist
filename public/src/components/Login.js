@@ -1,15 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
     const { loginWithRedirect } = useAuth0();
 
-    return (
-        <Container style={{ paddingTop: '2%' }}>
-            <button className="btn btn-danger btn-block" onClick={loginWithRedirect}>Log in Here</button>
-        </Container>
-    );
+    return <>
+        <div align="center">
+            <Button as="a" size="lg" variant="success" onClick={loginWithRedirect}>
+                Log in Here
+            </Button>
+        </div>
+    </>
 };
 
 export default Login;
