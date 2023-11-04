@@ -2,6 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
+    <div className="fixed-bottom" align="center">
     <footer className="bg-dark text-light py-3">
       <div className="footer">
         <div className="row">
@@ -34,6 +35,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+  </div>
   );
 };
 

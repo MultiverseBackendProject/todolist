@@ -3,20 +3,19 @@ import { NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import { useAuth0 } from "@auth0/auth0-react";
 import '../styles.css';
 
 const Navigation = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { logout } = useAuth0();
 
   const handleLogout = () => {
-    if (isAuthenticated) {
       logout({ returnTo: window.location.origin });
-    }
   };
 
   return (
-    <div className="d-flex justify-content-center"> {/* Center the navigation bar */}
+    <div className="justify-content-center"> {/* Center the navigation bar */}
       <Navbar sticky="top" bg="dark" variant="dark" className="mb-4 custom-navbar">
         <Container>
           <Navbar.Brand className="mr-auto">
@@ -35,47 +34,9 @@ const Navigation = () => {
             <Nav.Link as={NavLink} to="/callback/aboutus" className="nav-link">
               About Us
             </Nav.Link>
-            {isAuthenticated ? (
               <Nav.Link className="nav-link">
-                <button
-                  onClick={handleLogout}
-                  style={{
-                    color: 'black',
-                    border: 'none',
-                    background: 'none',
-                    fontWeight: 'bold',
-                    textDecoration: 'none',
-                    textTransform: 'capitalize',
-                    fontSize: '20px',
-                    fontWeight: '500',
-                    fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
-                    margin: '0 10px',
-                  }}
-                >
-                  Log Out
-                </button>
+                <Button onClick={handleLogout}> Log Out </Button>
               </Nav.Link>
-            ) : (
-              <Nav.Link className="nav-link">
-                <button
-                  onClick={loginWithRedirect}
-                  style={{
-                    color: 'black',
-                    border: 'none',
-                    background: 'none',
-                    fontWeight: 'bold',
-                    textDecoration: 'none',
-                    textTransform: 'capitalize',
-                    fontSize: '20px',
-                    fontWeight: '500',
-                    fontFamily: 'Helvetica Now Display Medium, Helvetica, Arial, sans-serif',
-                    margin: '0 10px',
-                  }}
-                >
-                  Log In
-                </button>
-              </Nav.Link>
-            )}
           </Nav>
         </Container>
       </Navbar>

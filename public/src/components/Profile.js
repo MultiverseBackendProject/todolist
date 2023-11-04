@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 const Profile = () => {
   return (
+  <div>
     <Container className='mobile' style={{ paddingTop: '2%', paddingLeft: '20%' }}>
       <Row>
         <Col md={6} className="mx-auto">
@@ -54,6 +55,7 @@ const Profile = () => {
         </Col>
       </Row>
     </Container>
+  </div>
   );
 };
 
