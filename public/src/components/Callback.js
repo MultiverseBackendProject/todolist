@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 
 const Callback = () => {
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { isLoading } = useAuth0();
 
     if (isLoading) {
         return <div>Loading...</div>
