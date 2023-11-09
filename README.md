@@ -19,7 +19,8 @@ Title: To-Do List - Fullstack Project
 
 Author(s): Tani Cha & Kim Le
 
-Date: 5 weeks
+Presentation Deck: [CICD.pptx](https://github.com/MultiverseBackendProject/todolist/files/13311348/CICD.pptx)
+
 
 ## Introduction
 
