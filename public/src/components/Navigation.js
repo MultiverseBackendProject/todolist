@@ -15,17 +15,15 @@ const Navigation = () => {
   };
 
   return (
-    <div className="justify-content-center">
+    <div className="justify-content-center"> {/* Center the navigation bar */}
       <Navbar sticky="top" bg="dark" variant="dark" className="mb-4 custom-navbar">
         <Container>
-        <Navbar.Brand className="mr-auto">
-          <span className="brand-name font-weight-bold text-primary" style={{ fontSize: '28px', color: '#007bff' }}>
-            To-Do List
-          </span>
-        </Navbar.Brand>
+          <Navbar.Brand className="mr-auto">
+            <span className="brand-name font-weight-bold text-primary">To-Do List</span>
+          </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link as={NavLink} to="/callback/home" className="nav-link">
-              Home
+              Homepage
             </Nav.Link>
             <Nav.Link as={NavLink} to="/callback/profile" className="nav-link">
               Profile
@@ -36,9 +34,9 @@ const Navigation = () => {
             <Nav.Link as={NavLink} to="/callback/aboutus" className="nav-link">
               About Us
             </Nav.Link>
-            <Nav.Link className="nav-link">
-              <Button className="nav-button" onClick={handleLogout}>Log Out</Button>
-            </Nav.Link>
+              <Nav.Link className="nav-link">
+                <Button onClick={handleLogout}> Log Out </Button>
+              </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

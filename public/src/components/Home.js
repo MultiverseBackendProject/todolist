@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 const Home = () => {
   return (
-    <Container align="center" className="heading">
+    <Container align="center">
       <h1>Welcome to your To-Do List!</h1>
       <Card>
         <Card.Body>

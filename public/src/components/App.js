@@ -7,6 +7,7 @@ import Logout from './Logout';
 import AnonHome from './AnonHome';
 import Callback from './Callback';
 import AboutUs from './AboutUs';
+import Footer from './Footer';
 
 function App() {
   return (
