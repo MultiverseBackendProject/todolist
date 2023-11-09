@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import Profile from './Profile';
 import ToDoList from './ToDoList';
 import Home from './Home';
@@ -9,6 +9,18 @@ import Callback from './Callback';
 import AboutUs from './AboutUs';
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Use the useEffect hook to listen for changes in the route.
+  useEffect(() => {
+    // Check if the current route is "/callback".
+    if (location.pathname === '/callback') {
+      // Redirect to "/callback/home".
+      navigate('/callback/home');
+    }
+  }, [location.pathname]);
+
   return (
     <div>
       <Routes>
