@@ -3,7 +3,6 @@ const express = require('express');
 const morgan = require('morgan');
 const toDoRoutes = require('./routes/toDoRoutes');
 const authRoutes = require('./routes/authRoutes');
-const session = require('express-session');
 const { auth } = require('express-openid-connect');
 require('dotenv').config();
 
@@ -33,28 +32,16 @@ const config = {
   },
 };
 
-app.use(session({ 
-  secret: AUTH0_SECRET, 
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-  secure: 'auto', 
-  httpOnly: true,       
-  maxAge: 24 * 60 * 60 * 1000
-}}))
-
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
 // Configure CORS for React frontend
-app.use(cors({ origin: `http://localhost:1234`, credentials: true }));
+app.use(cors({ origin: `http://localhost:1234` }));
 
 //Home page - different response depending on if user is logged in or not
 app.get('/', (req, res) => {
-  console.log(req.oidc.isAuthenticated())
-  if (req.oidc.isAuthenticated()) {
-    res.json('Hello World')
-    // res.json({ response: `Hello, ${req.oidc.user.given_name}` }); //if logged in
+  if (req.oidc.user) {
+    res.json({ response: `Hello, ${req.oidc.user.given_name}` }); //if logged in
   } else {
     res.json({ response: 'Hello there! You are not logged in at the moment.' }); //no login present
   }
@@ -63,12 +50,5 @@ app.get('/', (req, res) => {
 app.use('/auth', authRoutes); // login and logout
 app.use('/todos', toDoRoutes); //todo routes
 
-app.get('/debug/session', (req, res) => {
-  if (req.session) {
-    res.json({ session: req.session });
-  } else {
-    res.json({ error: 'No session' });
-  }
-});
 
 module.exports = app;
