@@ -13,7 +13,7 @@ const Callback = () => {
 
     return (
         <>  
-            {/* nav bar will only show up if in the callback routes (when authenticated) */}
+            {/* nav bar will ony show up if in the callback routes (when authenticated) */}
             <Navigation />
             <Outlet />
             <Footer />
