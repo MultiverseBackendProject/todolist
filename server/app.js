@@ -38,10 +38,11 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-  secure: 'auto', 
-  httpOnly: true,       
-  maxAge: 24 * 60 * 60 * 1000
-}}))
+    secure: false,
+    httpOnly: true,       
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}));
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
