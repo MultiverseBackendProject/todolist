@@ -10,7 +10,6 @@ const Home = () => {
         <Card.Body>
           <Card.Text>
             You are now logged in! Create a task and try out the app for yourself!
-            <i class="bi bi-emoji-smile"></i>
           </Card.Text>
         </Card.Body>
       </Card>
