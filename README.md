@@ -29,46 +29,52 @@ We created a simple to-do list that requires user authentication for the user to
 
 Below is a checklist of different project code requirements. A fully done project should get to as many tiers listed below as possible. Each tier is written as User Stories.
 
-Tier 1 - MVP Application and REST
-- As a User, I want to read entries from the database
-- As a User, I want to add entries to the database
-- As a User, I want to delete entries from the database
-- As a User, I want to edit entries in the database
-- As a User, I expect to do all of the above by accessing RESTful routes
-- As a User, I want to log in to a deployed app. Reference the Deployment section for instructions.
+Below is a checklist of different project code requirements. A fully done project should have get to as many tiers listed below as possible. Each tier is split up into Functionality and User Stories.
+
+Tier 1 - Application MVP Front End
+- Essential components have been incorporated and laid out on the page.
+- User is able to navigate through the page using necessary routes.
+- User interface is thoughtfully designed.  You may use vanilla CSS, or better yet, use a CSS Framework or styled Components.
+    - As a user, I want the app to have a nice UX, so that I can be happy and enjoy my time using the app. Think about how styling enhances the user experience
+    - As a user, I want to see the data nicely organized, so that I can consume and interact with it. Make sure where data is located makes sense from a user perspective.
 
 
-Tier 2 - Login and Hashing
-- As a User, I want to be able to log in to my API
-- As a User, I want any passwords saved to be hashed and salted before saved to the database (note: If you use OAuth, you might not even store passwords at all!)
+Tier 1 - Application MVP Back End
+- As a user, I want to read entries from the database
+- As a user, I want to add entries to the database
+- As a user, I want to delete entries from the database
+- As a user, I want to edit entries in the database
+- As a user, I expect to do all of the above by accessing RESTful routes
 
 
-Tier 3 - Register
-- As a potential User, I want to be able to sign up for the API
-- As a signed-up User, I want to be granted authorization to access the API
+Tier 1 - Application MVP Deployment
+- Deploy the application using the service of your choice.
 
 
-Tier 4 - Authorization
-- As a User, I want my API protected from unauthorized Users
-- As an unauthorized User, I want a helpful message telling me I do not have access to the API
-- (optional, but recommended): As a user, I want to receive a helpful error message anytime there is a problem with the request (i.e. error handling middleware)
-- As a User, I expect not to be able to create new entities without first logging in / authenticating in some way (token/session)
-- As a User, I want my data to only be accessible by myself
-- As a User, I want my data to only be editable/deletable by myself
+Tier 2 - Deployed Application via Continuous Deployment
+- Set up continuous deployments so that the application is deployed upon push/merge to main (or some other trigger).
+    - Main Goal: The deployed app should be the most up to date version of your working-and-tested repository code.
+    - Create a GitHub Workflow file for GitHub Actions and/or other necessary files for your deployment.
+        - NOTE: You are not required to use GitHub Actions. Feel free to use a different tool if you wish!
 
 
-Tier 5 - Associated Data
-In addition to the Tier 1 MVP criteria…
-- As a User, I want to be able to read a single entry
-- As a User requesting a single entry, I want to see the associated user info and other associated data. For example, if your API is a concert, instead of just the concert, I want to see who created the concert entry, as well as the associated location data, artist info, and attendees coming to the event.
+Tier 3 - Continuous Integration
+- Create a Branch Protection Rule to run the tests upon Pull Requests to the main branch.
+    - Upon successful test runs, Github Actions should deploy your application.
+        - NOTE: Again,** **you are not required to use GitHub Actions. Feel free to use a different tool if you wish!
 
 
-Tier 6 - Admin vs. User
-- As an Admin, I want to have a special super-user account type that allows access to content Users don’t have access to
-- As a basic User, when requesting a list of all entries, I expect to only see my own entries (not entries of other users)
-- As an Admin, when requesting a list of all entries, I expect to be able to see all entries, regardless of user/owner
-- As an Admin, I want to be able to edit other users’ information via the API
-- As an Admin, I want to be able to delete or edit any entity, regardless of user/owner
+Tier 4 - Login, Register, and Authentication
+- As a user, I can create a new account with my information saved in a database.
+- As a user, I can login to the account to retrieve information specific to my account. This information is displayed on the screen to make my user experience different from other users.
+- As User B, I should not have access to User A’s private data (i.e. profile information, unpublished blog posts, private images…)
+- Allow only authenticated users to access the private/profile/sharing portion of the application.
+- Allow unauthenticated users to access other pages (like a welcome screen, or list of public posts)
+
+
+Tier 5 - Admin vs User & Further Security Implementations
+- Create an admin setting that gives different controls to certain users of your application.
+- Protect your app against OWASP Top 10.
 
 ## Design
 
