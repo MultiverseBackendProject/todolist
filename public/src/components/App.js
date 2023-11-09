@@ -11,12 +11,11 @@ import AboutUs from './AboutUs';
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-
-  // Use the useEffect hook to listen for changes in the route.
+  
   useEffect(() => {
-    // Check if the current route is "/callback".
+    // check if the current route is "/callback".
     if (location.pathname === '/callback') {
-      // Redirect to "/callback/home".
+      // redirect to "/callback/home".
       navigate('/callback/home');
     }
   }, [location.pathname]);
