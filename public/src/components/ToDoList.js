@@ -30,7 +30,7 @@ function ToDoList() {
     setTasks(updatedTasks);
     if (updatedTasks[index].isEditing) {
       setTask(updatedTasks[index].task);
-      setDate(new Date(updatedTasks[index].date)); // Parse date string back to a Date object
+      setDate(new Date(updatedTasks[index].date)); 
     } else {
       setTask('');
       setDate(null);
@@ -41,7 +41,7 @@ function ToDoList() {
   const handleSaveTask = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index].task = task;
-    updatedTasks[index].date = format(date, 'MM-dd-yyyy'); // Format date to string
+    updatedTasks[index].date = format(date, 'MM-dd-yyyy'); 
     updatedTasks[index].isEditing = false;
     setTasks(updatedTasks);
     setTask('');
